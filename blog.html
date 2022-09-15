@@ -85,16 +85,161 @@
                             } <br>
                             
                             printName();</p> <br>
-                            <p><b>Output : </b> This tutorial is by linuxHint</p>
-                            <p class="card-text"><small class="text-muted">Source: &nbsp;&nbsp; geeksforgeeks.org</small></p>
+                            <p><b>Output : </b> <span class="text-success"> This tutorial is by linuxHint</span></p>
+                            <p class="card-text"><small class="text-muted">Source: &nbsp;&nbsp; linuxhint.com</small></p>
                         </div>
                         <div class="card-body col-6">
                             <h5 class="card-title">Local Scope</h5>
                             <p class="card-text">If you were to define some variables inside curly brackets {} or inside a specific function then those variables are
                             called local variables The local variables have a very confined scope which is called the local scope But, with the
                             release of ES6, the local scope was further broken down into two different scopes:</p>
-                            <p class="card-text"><small class="text-muted">Source: &nbsp;&nbsp;   geeksforgeeks.org</small></p>
+                            <ul>
+                                <li>Function scope</li>
+                                <li>Block scope.</li>
+                            </ul>
+
+                            <p><b>Example</b></p>
+                            <p>function abc() { <br>
+                            
+                            year = 2021; <br>
+                            
+                            // the "year" variable can be accessed inside this function  <br>
+                            
+                            console.log("The year is "+ Year); <br>
+                            } <br>
+                            
+                            // the "year" variable cannot be accessed outside here  <br>
+                            
+                            abc(); 
+                         <br></p>
+                         <p><b>Output : </b> <span class="text-success"> The year is 2021 </span>  </p>
+                            <p class="card-text"><small class="text-muted">Source: &nbsp;&nbsp; linuxhint.com</small></p>
                         </div>
+                       
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card mb-5" >
+            <div class="row g-0">
+                <div class="card">
+                    <div class="card-header text-center ">
+                        <h4>How works event loops in javascript</h4>
+                    </div>
+                    <div id="content " class="d-flex flex-row mb-3 ms-3 me-3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">What is the Event Loop?</h5> 
+
+                            <p class="card-text">The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the Call Stack is empty, the
+                            Event Loop will take the first event from the queue and will push it to the Call Stack, which effectively runs it.
+                            
+                            Such an iteration is called a tick in the Event Loop. Each event is just a function callback.</p>
+                          
+                            <p class="card-text">The common denominator in all environments is a built-in mechanism called the event loop, which handles the execution of
+                            multiple chunks of your program over time, each time invoking the JS Engine.</p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <p><b>Example</b></p>
+                            <p>This means that the JS Engine is just an on-demand execution environment for any arbitrary JS code. It’s the surrounding
+                            environment that schedules the events (the JS code executions).
+                            
+                            So, for example, when your JavaScript program makes an Ajax request to fetch some data from the server, you set up the
+                            “response” code in a function (the “callback”), and the JS Engine tells the hosting environment:
+                            “Hey, I’m going to suspend execution for now, but whenever you finish with that network request, and you have some data,
+                            please call this function back.”
+                            
+                            The browser is then set up to listen for the response from the network, and when it has something to return to you, it
+                            will schedule the callback function to be executed by inserting it into the event loop.</p> <br>
+                            <p class="text-start"> <b>Example</b> <br>
+                                console.log('Hi'); <br>
+                                setTimeout(function cb1() { <br>
+                                console.log('cb1'); <br>
+                                }, 5000); <br>
+                                console.log('Bye'); <br>
+                            </p>
+                         
+                            <p class="card-text"><small class="text-muted">Source: &nbsp;&nbsp; linuxhint.com</small></p>
+                        </div>
+                        
+                       
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="card mb-5" >
+            <div class="row g-0">
+                <div class="card">
+                    <div class="card-header text-center ">
+                        <h4>Many ways to get undefined</h4>
+                    </div>
+                    <div id="content " class="d-flex flex-row mb-3 ms-3 me-3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">1. variable that is no value assigned , that will give you (undefine)</h5> 
+                            <b>Example : </b> 
+                            <p>let a; <br>
+                            console.log(a)</p>
+
+                            <h5 class="card-title">2. you write a function but if you not return it , that it will give you undefine</h5> 
+                            <b>Example : </b> 
+                            <p>const add =(a,b) =>{ <br>
+                            const total = a+b; <br>
+                            } <br>
+                            const result = add(4,2); <br>
+                            console.log(result);</p>
+
+                            <h5 class="card-title">3. if you all function parameter not given , then it will give undefine</h5> 
+                            <b>Example : </b> 
+                            <p>const bigAmount = (a,b,c,d,e) =>{ <br>
+                            const total = a+b+c+d+e; <br>
+                            return total; <br>
+                            } <br>
+                            
+                            const result2 = bigAmount(5,2,3); <br>
+                            console.log(result2);</p>
+
+                            <h5 class="card-title">4. function return has no parameter pass, then it will give undefine</h5> 
+                            <b>Example : </b> 
+                            <p> const noNegative = (a,b) =>{ <br>
+                            if(a < 0 || b < 0) { <br>
+                                
+                                //that is the currect way to get result if you set negitive value; (return a+b;) <br>
+                                
+                                return <br>
+                            } <br>
+                            
+                            return a+b; }<br>
+
+                            const result3=noNegative(5,-2);<br>
+
+                            console.log(result3) <br></p>
+
+                            <h5 class="card-title"> 5. if you want to object Property value but if you not give proper Property name , then it will give undefine</h5> 
+                            <b>Example : </b> 
+                            <p> const myobject = {id:5, name:'Eh.emon',salary:50000,nickname:''}; <br>
+                            console.log(myobject.name, myobject.salary,myobject.nicknam);</p>
+
+                            <h5 class="card-title">6. if you want to access array element by index number but if you give wrong index ,then it will give undefine</h5> 
+                            <b>Example : </b> 
+                            <p> const myarray = [54,36,12,58,69,74]; <br>
+
+                            console.log(myarray[3],myarray[8], myarray[41])</p>
+
+
+                            <h5 class="card-title">7. if you set any value = empty then define null</h5> 
+                            <b>Example : </b> 
+                            <p> const k = ''; <br>
+                            console.log(k)</p>
+
+
+
+
+                            <p class="card-text"><small class="text-muted">Source: &nbsp;&nbsp; programming practice with jhankar mahbub </small></p>
+                        </div>
+                        
                        
 
                     </div>
